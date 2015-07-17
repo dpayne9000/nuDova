@@ -28,7 +28,7 @@ angular.module('blank', ['ionic', 'blank.controllers'])
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
+    templateUrl: 'templates/template.html',
     controller: 'AppCtrl'
   })
 
