@@ -49,19 +49,16 @@ angular.module('blank.controllers', [])
 	}
 })
 
-.controller('IndexCtrl', function($scope, userService) {
-    
-//get json object from web service
-$.ajax({url: "http://www.google.com", 
-        success: function(result){
-       alert(result);
-            },
-        error: function(xhr,status,error) {
-         alert(error);   
-        }
-       });    
- 
-    
+.controller('IndexCtrl', function($scope, $http, userService) {
+    var users = [];
+    $http.get("http://www.google.com").then(function(result){
+        users = result;
+        alert(users);
+    }, function(err) {
+    alert('ERR', err);
+    // err.status will contain the status code
+  });
+    //alert(data2);
 $scope.data = [{ 'text':'article','image':'img/page.png','id':4,'likes':1,'comments':69},{ 'text':'article','image':'img/page.png','id':4,'likes':1,'comments':69}];
 })
 
