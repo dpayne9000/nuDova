@@ -1,4 +1,4 @@
-angular.module('blank.controllers', [])
+angular.module('blank.controllers', ['ionic','ngResource'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -41,23 +41,15 @@ angular.module('blank.controllers', [])
   };
 })
 
-.factory('userService', function($http) {
-	return {
-		getUsers: function(){
-			return $http.get("http://www.google.com/");
-		}
-	}
+.factory('timelineService', function($resource) {
+    
+	return $resource("http://www.google.com/");
+    
 })
 
-.controller('IndexCtrl', function($scope, $http, userService) {
-    var users = [];
-    $http.get("http://www.google.com").then(function(result){
-        users = result;
-        alert(users);
-    }, function(err) {
-    alert('ERR', err);
-    // err.status will contain the status code
-  });
+.controller('IndexCtrl', function($scope, $http, timelineService) {
+
+    alert(timelineService.query());
     //alert(data2);
 $scope.data = [{ 'text':'article','image':'img/page.png','id':4,'likes':1,'comments':69},{ 'text':'article','image':'img/page.png','id':4,'likes':1,'comments':69}];
 })
