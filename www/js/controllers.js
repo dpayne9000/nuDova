@@ -50,9 +50,15 @@ angular.module('blank.controllers', [])
 })
 
 .controller('IndexCtrl', function($scope, userService) {
-	userService.getUsers().then(function(users){
-		alert(users);
-	});
+
+$.ajax({url: "http://www.google.com", 
+        success: function(result){
+       alert(result);
+            },
+        error: function(xhr,status,error) {
+         alert(error);   
+        }
+       });    
  
     
 $scope.data = [{ 'text':'article','image':'img/page.png','id':4,'likes':1,'comments':69},{ 'text':'article','image':'img/page.png','id':4,'likes':1,'comments':69}];
