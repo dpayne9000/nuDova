@@ -60,11 +60,11 @@ angular.module('blank', ['ionic', 'blank.controllers'])
     })
 
   .state('app.single', {
-    url: '/playlists/:playlistId',
+    url: '/single/:itemId',
     views: {
       'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'templates/single.html',
+        controller: 'SingleCtrl'
       }
     }
   });

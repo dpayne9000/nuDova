@@ -41,16 +41,27 @@ angular.module('blank.controllers', [])
   };
 })
 
-.controller('IndexCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+.factory('userService', function($http) {
+	return {
+		getUsers: function(){
+			return $http.get("https://www.google.com/users");
+		}
+	}
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('IndexCtrl', function($scope, userService) {
+	userService.getUsers().then(function(users){
+		alert(users);
+	});
+ 
+    
+$scope.data = { 'haha':'fuckyou','haha':'fuckyou' ,'haha':'fuckyou'  }
+})
+
+
+
+.controller('SingleCtrl', function($scope, $stateParams) {
+   // return { 'haha':'fuckyou' }
+    $scope.body = { 'text':'article','image':'img/page.png','id':4,'likes':1,'comments':69};
+    $scope.data = { 'haha':'fuckyou' };
 });
