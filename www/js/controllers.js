@@ -55,7 +55,7 @@ angular.module('blank.controllers', [])
 	});
  
     
-$scope.data = { 'haha':'fuckyou','haha':'fuckyou' ,'haha':'fuckyou'  }
+$scope.data = [{ 'text':'article','image':'img/page.png','id':4,'likes':1,'comments':69},{ 'text':'article','image':'img/page.png','id':4,'likes':1,'comments':69}];
 })
 
 

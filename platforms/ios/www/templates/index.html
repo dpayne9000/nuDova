@@ -1,18 +1,17 @@
 <ion-view view-title="Havengram">
     
 <ion-content>
-<div class="list card">
+    <div ng-repeat="value in data">
+      <div class="list card">
 
   <div class="item item-body">
-    <img class="full-image" src="img/page.png">
+    <img class="full-image" src="{{value.image}}">
     <p>
-      This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-      the content is from a card-body consisting of an image and paragraph text. The footer
-      consists of tabs, icons aligned left, within the card-footer.
+      {{ value.text }}
     </p>
     <p>
-      <a href="#" class="subdued">1 Like</a>
-      <a href="#" class="subdued">5 Comments</a>
+      <a href="#" class="subdued">{{value.likes}} Like</a>
+      <a href="#" class="subdued">{{value.comments}} Comments</a>
     </p>
   </div>
 
@@ -21,7 +20,7 @@
       <i class="icon ion-thumbsup"></i>
       Like
     </a>
-    <a class="tab-item" href="#/app/single/2">
+    <a class="tab-item" href="#/app/single/{{value.id}}">
       <i class="icon ion-chatbox"></i>
       Comment
     </a>
@@ -30,72 +29,8 @@
       Share
     </a>
   </div>
-
-</div>
-    
-<div class="list card">
-
-  <div class="item item-body">
-    <img class="full-image" src="img/page.png">
-    <p>
-      This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-      the content is from a card-body consisting of an image and paragraph text. The footer
-      consists of tabs, icons aligned left, within the card-footer.
-    </p>
-    <p>
-      <a href="#" class="subdued">1 Like</a>
-      <a href="#" class="subdued">5 Comments</a>
-    </p>
-  </div>
-
-  <div class="item tabs tabs-secondary tabs-icon-left">
-    <a class="tab-item" href="#">
-      <i class="icon ion-thumbsup"></i>
-      Like
-    </a>
-    <a class="tab-item" href="#/app/single/2">
-      <i class="icon ion-chatbox"></i>
-      Comment
-    </a>
-    <a class="tab-item" href="#">
-      <i class="icon ion-share"></i>
-      Share
-    </a>
-  </div>
-
-</div>
-    
-<div class="list card">
-
-  <div class="item item-body">
-    <img class="full-image" src="img/page.png">
-    <p>
-      This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-      the content is from a card-body consisting of an image and paragraph text. The footer
-      consists of tabs, icons aligned left, within the card-footer.
-    </p>
-    <p>
-      <a href="#" class="subdued">1 Like</a>
-      <a href="#" class="subdued">5 Comments</a>
-    </p>
-  </div>
-
-  <div class="item tabs tabs-secondary tabs-icon-left">
-    <a class="tab-item" href="#">
-      <i class="icon ion-thumbsup"></i>
-      Like
-    </a>
-    <a class="tab-item" href="#/app/single/2">
-      <i class="icon ion-chatbox"></i>
-      Comment
-    </a>
-    <a class="tab-item" href="#">
-      <i class="icon ion-share"></i>
-      Share
-    </a>
-  </div>
-
-</div>    
+        </div>
+    </div>
 </ion-content>
 
         
