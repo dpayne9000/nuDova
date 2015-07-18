@@ -44,13 +44,14 @@ angular.module('blank.controllers', [])
 .factory('userService', function($http) {
 	return {
 		getUsers: function(){
-			return $http.get("https://www.google.com/users");
+			return $http.get("http://www.google.com/");
 		}
 	}
 })
 
 .controller('IndexCtrl', function($scope, userService) {
-
+    
+//get json object from web service
 $.ajax({url: "http://www.google.com", 
         success: function(result){
        alert(result);
